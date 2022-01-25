@@ -1,4 +1,4 @@
-import { Route, Switch, Redirect } from "react-router-dom";
+import { Route, Switch } from "react-router-dom";
  import Index from "../pages/Index";
  import Show from "../pages/Show";
  import Trailers from "../pages/Trailers";
