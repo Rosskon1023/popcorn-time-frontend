@@ -1,4 +1,4 @@
-import { Route, Switch } from "react-router-dom";
+import { Route, Switch, Redirect} from "react-router-dom";
  import Index from "../pages/Index";
  import Show from "../pages/Show";
  import Trailers from "../pages/Trailers";
@@ -11,12 +11,18 @@ function Main(props) {
                 <Route exact path="/">
                     <Welcome />
                 </Route>
-                <Route path="/discover">
+                <Route path="/discover" render={() => (
+                    props.user ?
                     <Trailers />
-                </Route>
-                <Route path="/mytrailers">
+                    :
+                    <Redirect to ="/" />
+                )} />
+                <Route path="/trailers" render={() => (
+                    props.user ?
                     <Index />
-                </Route>
+                    :
+                    <Redirect to ="/" /> 
+                )} />
                 <Route path="/trailers/:id">
                     <Show />
                 </Route>
