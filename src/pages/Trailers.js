@@ -1,20 +1,81 @@
+import { useState } from 'react';
 
 function Trailers(props) {
+
+    const [ movies, setMovies ] = useState(null)
+
+    const apiKey = "2fb1621e84afba4ed275fabe3e910758";
+    const urlNowPlaying = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
+    
+
+    // async function getNowPlaying(event) {
+    //     event.preventDefault()
+    //     const nowPlayingResponse = await fetch(urlNowPlaying);
+    //     const nowPlayingData = await nowPlayingResponse.json()
+    //     let nowPlayingMovies = [];
+    //     nowPlayingData.results.forEach(movie => (
+    //         nowPlayingMovies.push(movie.id)
+    //     ))
+    //     const movieId = nowPlayingMovies[Math.floor(Math.random()*nowPlayingMovies.length)];
+    //     const movieIdResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos`);
+    //     const movieIdData = await movieIdResponse.json()
+    //     const movieIdVideo = movieIdData.videos.results;
+    //     for (let i=0; i<movieIdVideo.length; i++) {
+    //         if(movieIdVideo[i].name.includes("Official") && movieIdVideo[i].type.includes("Trailer")) {
+    //             let videoKey = movieIdVideo[i].key;
+    //             setMovies ({
+    //                 movieId,
+    //                 videoKey,
+    //             })
+    //             break;
+    //         }
+    //     }
+    // }
+
+    async function getNowPlaying(event) {
+        event.preventDefault()
+        const nowPlayingResponse = await fetch(urlNowPlaying);
+        const nowPlayingData = await nowPlayingResponse.json()
+        let nowPlayingMovies = [];
+        nowPlayingData.results.forEach(movie => (
+            nowPlayingMovies.push(movie.id)
+        ))
+        for (const movieId of nowPlayingMovies) {
+            const movieIdResponse = await fetch(`https://api.themoviedb.org/3/movie/${movieId}?api_key=${apiKey}&append_to_response=videos`)
+            const movieIdData = await movieIdResponse.json()
+            const movieIdVideo = movieIdData.videos.results;
+            for (let i=0; i<movieIdVideo.length; i++) {
+                if(movieIdVideo[i].name.includes("Official") && movieIdVideo[i].type.includes("Trailer")) {
+                    let videoKey = movieIdVideo[i].key;
+                    setMovies((prevState) => ({
+                        ...prevState,
+                        movieIdData,
+                        videoKey,
+                    }))
+                    break;
+                }
+            }
+        }
+    }
+
+    console.log(movies);
+
+
     return (
         <div className="trailers-container">
             <div className="trailers-now-playing">
-                <form>
+                <form onSubmit={getNowPlaying}>
                     <input
                         type="submit" 
                         value="Now Playing"
                     />
                 </form>
             </div>
-            <div className="trailers-search">
+            {/* <div className="trailers-search">
                 <form>
                     <div className="date-search">
                         <p>Find trailers by date of release</p>
-                        <label for="datemin">Enter a start date:</label>
+                        <label for="datemin">Start date:</label>
                         <input 
                             type="date" 
                             id="datemin" 
@@ -22,7 +83,7 @@ function Trailers(props) {
                             min="1900-01-01"
                             max="2024-01-01"
                         />
-                        <label for="datemax">Enter an end date:</label>
+                        <label for="datemax">End date:</label>
                         <input 
                             type="date" 
                             id="datemax" 
@@ -112,7 +173,7 @@ function Trailers(props) {
                         <input type="submit" value="Search Trailers" />
                     </div>
                 </form>
-            </div>
+            </div> */}
             <div className="trailer-view">
                 <div className="trash-it">
                     <input type="submit" value="Trash It!" />
