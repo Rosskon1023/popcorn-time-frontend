@@ -6,7 +6,8 @@ function Index(props) {
 
     const [ movies, setMovies ] = useState([]);
 
-    const URL = "http://localhost:3001/trailers/";
+    // const URL = "http://localhost:3001/trailers/";
+    const URL = "https://its-popcorn-time.herokuapp.com/trailers/";
 
     const getTrailers = async () => {
         

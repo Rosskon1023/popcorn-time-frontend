@@ -6,7 +6,8 @@ function Show(props) {
 
     const id = props.match.params.id;
 
-    const URL = `http://localhost:3001/mytrailers/${id}`;
+    // const URL = `http://localhost:3001/mytrailers/${id}`;
+    const URL = `https://its-popcorn-time.herokuapp.com/mytrailers/${id}`;
 
     
 

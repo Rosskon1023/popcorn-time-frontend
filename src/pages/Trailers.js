@@ -8,7 +8,8 @@ function Trailers(props) {
     const apiKey = "2fb1621e84afba4ed275fabe3e910758";
     const urlNowPlaying = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
     
-    const URL = "http://localhost:3001/trailers/";
+    // const URL = "http://localhost:3001/trailers/";
+    const URL = "https://its-popcorn-time.herokuapp.com/trailers/";
 
     const createPeople = async (currentMovie) => {
         await fetch(URL, {
