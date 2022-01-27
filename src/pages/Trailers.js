@@ -58,11 +58,11 @@ function Trailers(props) {
     const handleTrashIt = (event) => {
         event.preventDefault();
         const new_array = movies.map((movie) => movie); 
-        console.log(new_array);
+       
         const index = new_array.findIndex(item => item === currentMovie);
-        console.log(index);
+        
         new_array.splice(index, 1);
-        console.log(new_array);
+        
         setMovies(new_array);
     }
 
@@ -70,11 +70,11 @@ function Trailers(props) {
         event.preventDefault();
         createPeople(currentMovie);
         const new_array = movies.map((movie) => movie); 
-        console.log(new_array);
+        
         const index = new_array.findIndex(item => item === currentMovie);
-        console.log(index);
+    
         new_array.splice(index, 1);
-        console.log(new_array);
+        
         setMovies(new_array);
     }
 

@@ -8,14 +8,7 @@ function Show(props) {
 
     const URL = `http://localhost:3001/mytrailers/${id}`;
 
-    const getMovie = async () => {
-        
-        const response = await fetch(URL, {
-            method: 'GET',
-        });
-        const data = await response.json();
-        setMovie(data);
-    };
+    
 
     const deleteTrailer = async (id) => {
         await fetch(URL, {
@@ -29,8 +22,16 @@ function Show(props) {
     }
 
     useEffect(() => {
-       getMovie();     
-    }, []);
+        const getMovie = async () => {
+        
+            const response = await fetch(URL, {
+                method: 'GET',
+            });
+            const data = await response.json();
+            setMovie(data);
+        };
+        getMovie();     
+    });
 
     return (
         <div className="show-container" style={{
