@@ -23,9 +23,14 @@ function Main(props) {
                     :
                     <Redirect to ="/" /> 
                 )} />
-                <Route path="/trailers/:id">
-                    <Show />
-                </Route>
+                <Route path="/mytrailers/:id" render={(rp) => (
+                    props.user ?
+                    <Show
+                        {...rp}
+                    />
+                    :
+                    <Redirect to ="/" />
+                )} /> 
             </Switch>
         </div>
     )

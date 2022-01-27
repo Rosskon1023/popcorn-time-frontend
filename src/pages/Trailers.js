@@ -8,6 +8,18 @@ function Trailers(props) {
     const apiKey = "2fb1621e84afba4ed275fabe3e910758";
     const urlNowPlaying = `https://api.themoviedb.org/3/movie/now_playing?api_key=${apiKey}&language=en-US&page=1`;
     
+    const URL = "http://localhost:3001/trailers/";
+
+    const createPeople = async (currentMovie) => {
+        const response = await fetch(URL, {
+            method: "POST",
+            headers: {
+                "Content-Type": "Application/json"
+            },
+            body: JSON.stringify(currentMovie)
+        })
+    }
+
     function getRandomMovie() {
         const movie = movies[Math.floor((Math.random()*movies.length))];
         setCurrentMovie(movie);
@@ -56,6 +68,7 @@ function Trailers(props) {
 
     const handleSaveIt = (event) => {
         event.preventDefault();
+        createPeople(currentMovie);
         const new_array = movies.map((movie) => movie); 
         console.log(new_array);
         const index = new_array.findIndex(item => item === currentMovie);
@@ -78,8 +91,8 @@ function Trailers(props) {
                 </div>
                 <div className="video-responsive" >
                     <iframe
-                        width="853"
-                        height="480"
+                        width="560"
+                        height="340"
                         src={`https://www.youtube.com/embed/${currentMovie[0].videoKey}`}
                         frameBorder="0"
                         allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
@@ -95,7 +108,11 @@ function Trailers(props) {
     }
     
     const loading = () => {
-        return <h1>Select Now Playing to view Trailers</h1>
+        return (
+            <div className="trailer-loading">
+                <h1>Select Now Playing to view Trailers</h1>
+            </div>
+        )
     }
 
     return (
