@@ -54,6 +54,18 @@ function Trailers(props) {
         setMovies(new_array);
     }
 
+    const handleSaveIt = (event) => {
+        event.preventDefault();
+        const new_array = movies.map((movie) => movie); 
+        console.log(new_array);
+        const index = new_array.findIndex(item => item === currentMovie);
+        console.log(index);
+        new_array.splice(index, 1);
+        console.log(new_array);
+        setMovies(new_array);
+    }
+
+
     useEffect(() => {
         if (movies) getRandomMovie();
     });
@@ -76,7 +88,7 @@ function Trailers(props) {
                     />
                 </div>
                 <div className="save-it">
-                    <input type="submit" value="Save It!" />
+                    <input type="submit" value="Save It!" onClick={handleSaveIt} />
                 </div>
             </div>
         )
