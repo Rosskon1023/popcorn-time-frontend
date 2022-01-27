@@ -11,7 +11,7 @@ function Trailers(props) {
     const URL = "http://localhost:3001/trailers/";
 
     const createPeople = async (currentMovie) => {
-        const response = await fetch(URL, {
+        await fetch(URL, {
             method: "POST",
             headers: {
                 "Content-Type": "Application/json"
