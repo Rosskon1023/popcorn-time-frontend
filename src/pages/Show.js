@@ -41,9 +41,8 @@ function Show(props) {
             backgroundSize: "cover"
         }}>
             <div className="sub-show-container-1">
-                <div>{movie.title}</div>
-                <div className="video-responsive" >
-                    <iframe
+                <div className="video-responsive-show" >
+                    <iframe className="video-responsive-show-iframe"
                         width="560"
                         height="340"
                         src={`https://www.youtube.com/embed/${movie.videoKey}`}
@@ -53,15 +52,16 @@ function Show(props) {
                         title="Embedded youtube"
                     />
                 </div>
-                <button id="delete" onClick={handleClick}>
-                    DELETE
-                </button>
             </div>
             <div className="sub-show-container-2">
                 <div className="show-card">
+                    <div>{movie.title}</div>
                     <div>{movie.runtime}</div>
                     <div>{movie.revenue}</div>
                     <div>{movie.overview}</div>
+                    <button id="delete" onClick={handleClick}>
+                        DELETE
+                    </button>
                 </div>
             </div>
         </div>
