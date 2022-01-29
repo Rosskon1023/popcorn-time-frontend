@@ -189,7 +189,12 @@ function Trailers(props) {
                 <div className="trash-it" >
                     <input type="submit" value="Trash It!" onClick={handleTrashIt} />
                 </div>
-                <div className="video-responsive" >
+                <div className="video-responsive" currentMovie={currentMovie} >
+                    <h2 style={{
+                        textAlign: "center",
+                        }}>
+                    {currentMovie[0].movieIdData.title}
+                    </h2>
                     <iframe
                         width="560"
                         height="340"
