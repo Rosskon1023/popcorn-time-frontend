@@ -110,11 +110,14 @@ function Trailers(props) {
         }
     }
 
-    const createPeople = async (currentMovie) => {
+    const createMovie = async (currentMovie) => {
+        if(!props.user) return;
+        const token = await props.user.getIdToken();
         await fetch(URL, {
             method: "POST",
             headers: {
-                "Content-Type": "Application/json"
+                "Content-Type": "Application/json",
+                "Authorization": "Bearer " + token
             },
             body: JSON.stringify(currentMovie)
         })
@@ -168,7 +171,7 @@ function Trailers(props) {
 
     const handleSaveIt = (event) => {
         event.preventDefault();
-        createPeople(currentMovie);
+        createMovie(currentMovie);
         const new_array = movies.map((movie) => movie); 
         
         const index = new_array.findIndex(item => item === currentMovie);

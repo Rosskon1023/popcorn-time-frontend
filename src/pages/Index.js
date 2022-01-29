@@ -9,18 +9,24 @@ function Index(props) {
     // const URL = "http://localhost:3001/trailers/";
     const URL = "https://its-popcorn-time.herokuapp.com/trailers/";
 
-    const getTrailers = async () => {
-        
-        const response = await fetch(URL, {
-            method: 'GET',
-        });
-        const data = await response.json();
-        setMovies(data);
-    };
-
     useEffect(() => {
-       getTrailers();     
-    }, []);
+        const getTrailers = async () => {
+            if(!props.user)  return;
+            const token = await props.user.getIdToken();
+            
+            const response = await fetch(URL, {
+                method: 'GET',
+                headers: { 
+                    'Authorization': 'Bearer ' + token
+                }
+            });
+            const data = await response.json();
+            setMovies(data);
+        };
+        if(props.user) {
+            getTrailers(); 
+        }  
+    }, [props.user]);
 
     return (
         <div className="index-container">

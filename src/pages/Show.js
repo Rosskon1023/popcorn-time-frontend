@@ -32,7 +32,7 @@ function Show(props) {
             setMovie(data);
         };
         getMovie();     
-    });
+    }, [props.user, URL]);
 
     return (
         <div className="show-container" style={{

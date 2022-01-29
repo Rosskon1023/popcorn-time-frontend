@@ -6,26 +6,27 @@ import { Route, Switch, Redirect} from "react-router-dom";
 
 function Main(props) {
     return (
-        <div className="main">
+        <div className="main" >
             <Switch>
                 <Route exact path="/">
                     <Welcome />
                 </Route>
                 <Route path="/discover" render={() => (
                     props.user ?
-                    <Trailers />
+                    <Trailers user={props.user} />
                     :
                     <Redirect to ="/" />
                 )} />
                 <Route path="/trailers" render={() => (
                     props.user ?
-                    <Index />
+                    <Index user={props.user} />
                     :
                     <Redirect to ="/" /> 
                 )} />
                 <Route path="/mytrailers/:id" render={(rp) => (
                     props.user ?
-                    <Show
+                    <Show 
+                        user={props.user}
                         {...rp}
                     />
                     :
