@@ -152,7 +152,7 @@ function Trailers(props) {
                             type="text"
                             id="actor"
                             value=""
-                            name="radio-buttons"
+                            name="actor"
                         />
                     </div>
                     <div className="genre-search">

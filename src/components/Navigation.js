@@ -17,16 +17,7 @@ function Navigation(props) {
             {
                 props.user ?
                 <div className="nav-image">
-                    <img 
-                        style={{
-                            height: '2.5rem',
-                            width: '2.5rem',
-                            borderRadius: '50%'
-                        }}
-                        src={props.user.photoURL}
-                        alt={props.user.displayName}
-                    />
-                    <button onClick={logout}>Logout</button>
+                <button onClick={logout}>Logout</button>
                 </div>
                 :
                 <button onClick={login}>Login</button>

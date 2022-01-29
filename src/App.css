@@ -17,12 +17,14 @@
   color: Blue;
   justify-content: space-between;
   align-items: center;
+  background-color: #fefbe9;
 }
 
 .main {
   display: grid;
   grid-template-rows: 1fr 2.5fr;
   grid-template-columns: 1fr 1fr;
+  background-color: #fefbe9;
 }
 
 .welcome-container {
@@ -47,7 +49,6 @@
   display: flex;
   align-items: center;
   justify-content: center;
-  border-bottom: 2px solid black;
 }
 
 .trailers-search {
@@ -57,15 +58,17 @@
   font-size: 12px;
   justify-content: space-evenly;
   align-items: stretch;
-  border-bottom: 2px solid black;
-  border-left: 2px solid black;
 }
 
 .trailers-search-form {
+  width: 90%;
   margin-top: 5px;
   display: grid;
   grid-template-columns: 1fr;
   grid-template-rows: 1fr 1fr 1fr 1fr;
+  /* border: 3px solid #183a1d;
+  border-radius: 10%; */
+  padding: 20px;
 }
 
 .trailer-loading {
@@ -167,6 +170,7 @@
   color: rgb(86, 86, 119);
   justify-content: center;
   align-items: center;
+  background-color: #e1eedd;
 }
 
 
