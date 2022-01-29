@@ -189,9 +189,11 @@ function Trailers(props) {
     const loaded = () => {
         return (
             <div className="trailer-view" >
+                
                 <div className="trash-it" >
                     <input type="submit" value="Trash It!" onClick={handleTrashIt} />
                 </div>
+                
                 <div className="video-responsive" currentMovie={currentMovie} >
                     <h2 style={{
                         textAlign: "center",

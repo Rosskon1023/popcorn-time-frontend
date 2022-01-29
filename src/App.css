@@ -85,7 +85,26 @@
   display: grid;
   grid-template-columns: 1fr 4fr 1fr;
   place-items: center;
+  background: linear-gradient(to right,rgb(197, 103, 103),#fefbe9,#fefbe9,#fefbe9,#fefbe9,rgb(103, 179, 103));
 }
+
+.trash-it {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.save-it {
+  height: 100%;
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+
 
 .index-container {
   grid-column: 1/3;
