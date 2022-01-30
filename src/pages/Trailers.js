@@ -24,7 +24,6 @@ function Trailers(props) {
         Crime: '80',
         Romance: '10749',
         War: '10752',
-        Documentary: '99'
     }
 
     const apiKey = "2fb1621e84afba4ed275fabe3e910758";
@@ -221,8 +220,7 @@ function Trailers(props) {
         return (
             <div className="trailer-loading">
                 <div className="trailer-loading-text">
-                    <h1>View trailers currently in theaters</h1>
-                    <h1>or enter a custom search</h1>
+                    <h1>View trailers currently in theaters using the "Now Playing" button, or enter a custom search </h1>
                 </div>
             </div>
         )
@@ -285,7 +283,6 @@ function Trailers(props) {
                                 <option value="Crime">Crime</option>
                                 <option value="Romance">Romance</option>
                                 <option value="War">War</option>
-                                <option value="Documentary">Documentary</option>
                             </select>
                         </div>
                         <div className="rating-search-minimum">

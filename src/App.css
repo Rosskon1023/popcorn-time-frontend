@@ -244,6 +244,7 @@
   padding: 20px;
   background-color: rgba(224, 220, 220, 0.75);
   font-family: 'Eczar', serif;
+  text-align: center;
 }
 
 .trailer-view {
@@ -379,7 +380,7 @@
 }
 
 .video-responsive-show-iframe {
-  border: 20px solid white;
+  border: 20px solid rgba(255,255,255,0.7);
   box-shadow: rgba(255, 255, 255, 0.3) 0px 10px 20px, rgba(255, 255, 255, 0.35) 0px 6px 6px;
 }
 
@@ -393,7 +394,7 @@
 .show-card {
   width: 80%;
   height: 80%;
-  border: 1px solid white;
+  border: 4px solid rgb(0, 0, 0);
   background-color: rgba(255,255,255,0.9);
   border-radius: 5px;
   box-shadow: rgba(214, 156, 48, 0.685) 0px 10px 30px;
