@@ -221,8 +221,8 @@ function Trailers(props) {
         return (
             <div className="trailer-loading">
                 <div className="trailer-loading-text">
-                    <h1>Select Now Playing to view trailers currently in theaters</h1><br />
-                    <h1>Or enter a custom search</h1>
+                    <h1>View trailers currently in theaters</h1>
+                    <h1>or enter a custom search</h1>
                 </div>
             </div>
         )
