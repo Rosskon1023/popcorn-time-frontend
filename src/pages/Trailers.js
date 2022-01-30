@@ -237,75 +237,79 @@ function Trailers(props) {
             </div>
             <div className="trailers-search">
                 <form className="trailers-search-form" onSubmit={getSearchForm}>
-                    <div className="date-search">
-                        <label for="datemin">Release Date Range:    </label>
-                        <input 
-                            type="date" 
-                            id="datemin" 
-                            name="datemin" 
-                            min="1900-01-01"
-                            max="2024-01-01"
-                            onChange={handleChange}
-                        />
-                        <label for="datemax">   to   </label>
-                        <input 
-                            type="date" 
-                            id="datemax" 
-                            name="datemax" 
-                            min="1900-01-01"
-                            max="2024-01-01"
-                            onChange={handleChange}
-                        />
+                    <div className="trailers-search-form-left">
+                        <div className="date-search">
+                            <label for="datemin">Release Dates: </label>
+                            <input 
+                                type="date" 
+                                id="datemin" 
+                                name="datemin" 
+                                min="1900-01-01"
+                                max="2024-01-01"
+                                onChange={handleChange}
+                            />
+                            <label for="datemax"> to </label>
+                            <input 
+                                type="date" 
+                                id="datemax" 
+                                name="datemax" 
+                                min="1900-01-01"
+                                max="2024-01-01"
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="actor-search">
+                            <label for="actor">Featured Actor:    </label>
+                            <input
+                                type="text"
+                                id="actor"
+                                value={newForm.actor}
+                                name="actor"
+                                onChange={handleChange}
+                            />
+                        </div>
+                        <div className="genre-search">
+                            <label for="genre">Select Genre:    </label>
+                            <select id="genre" name="genre" onChange={handleChange}>
+                                <option value="">Genres</option>
+                                <option value="Thriller">Thriller</option>
+                                <option value="Animation">Animation</option>
+                                <option value="Sci_Fi">Sci Fi</option>
+                                <option value="Action">Action</option>
+                                <option value="Comedy">Comedy</option>
+                                <option value="Drama">Drama</option>
+                                <option value="Horror">Horror</option>
+                                <option value="Crime">Crime</option>
+                                <option value="Romance">Romance</option>
+                                <option value="War">War</option>
+                                <option value="Documentary">Documentary</option>
+                            </select>
+                        </div>
+                        <div className="rating-search-minimum">
+                            <label for="ratingmin">Min:  </label>
+                            <select id="ratingmin" name="ratingmin" onChange={handleChange}>
+                                <option value="">Rating</option>
+                                <option value="G">G</option>
+                                <option value="PG">PG</option>
+                                <option value="PG-13">PG-13</option>
+                                <option value="R">R</option>
+                            </select>
+                        </div>
+                        <div className="rating-search-maximum">
+                            <label for="ratingmax">Max:  </label>
+                            <select id="ratingmax" name="ratingmax" onChange={handleChange}>
+                                <option value="">Rating</option>
+                                <option value="G">G</option>
+                                <option value="PG">PG</option>
+                                <option value="PG-13">PG-13</option>
+                                <option value="R">R</option>
+                            </select>
+                        </div>
                     </div>
-                    <div className="actor-search">
-                        <label for="actor">Featured Actor:    </label>
-                        <input
-                            type="text"
-                            id="actor"
-                            value={newForm.actor}
-                            name="actor"
-                            onChange={handleChange}
-                        />
-                    </div>
-                    <div className="genre-search">
-                        <label for="genre">Select Genre:    </label>
-                        <select id="genre" name="genre" onChange={handleChange}>
-                            <option value="">Genres</option>
-                            <option value="Thriller">Thriller</option>
-                            <option value="Animation">Animation</option>
-                            <option value="Sci_Fi">Sci Fi</option>
-                            <option value="Action">Action</option>
-                            <option value="Comedy">Comedy</option>
-                            <option value="Drama">Drama</option>
-                            <option value="Horror">Horror</option>
-                            <option value="Crime">Crime</option>
-                            <option value="Romance">Romance</option>
-                            <option value="War">War</option>
-                            <option value="Documentary">Documentary</option>
-                        </select>
-                    </div>
-                    <div className="rating-search-minimum">
-                        <label for="ratingmin">Min:  </label>
-                        <select id="ratingmin" name="ratingmin" onChange={handleChange}>
-                            <option value="">Rating</option>
-                            <option value="G">G</option>
-                            <option value="PG">PG</option>
-                            <option value="PG-13">PG-13</option>
-                            <option value="R">R</option>
-                        </select>
-                    </div>
-                    <div className="rating-search-maximum">
-                        <label for="ratingmax">Max:  </label>
-                        <select id="ratingmax" name="ratingmax" onChange={handleChange}>
-                            <option value="">Rating</option>
-                            <option value="G">G</option>
-                            <option value="PG">PG</option>
-                            <option value="PG-13">PG-13</option>
-                            <option value="R">R</option>
-                        </select>
-                    </div>
-                    <div className="trailers-search-submit">
-                        <input type="submit" value="Search Trailers" />
+                    <div className="trailers-search-form-right">
+                        <div className="trailers-now-playing">
+                            <input type="submit" value="Search Trailers" />
+                        </div>
                     </div>
                 </form>
             </div>

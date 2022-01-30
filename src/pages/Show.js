@@ -9,8 +9,6 @@ function Show(props) {
     // const URL = `http://localhost:3001/mytrailers/${id}`;
     const URL = `https://its-popcorn-time.herokuapp.com/mytrailers/${id}`;
 
-    
-
     const deleteTrailer = async (id) => {
         await fetch(URL, {
             method: "DELETE",
@@ -55,10 +53,11 @@ function Show(props) {
             </div>
             <div className="sub-show-container-2">
                 <div className="show-card">
-                    <div>{movie.title}</div>
-                    <div>{movie.runtime}</div>
-                    <div>{movie.revenue}</div>
-                    <div>{movie.overview}</div>
+                    <div className="show-card-title">{movie.title}</div>
+                    <div><span>Runtime:</span> {movie.runtime} minutes</div>
+                    <div><span>Plot:</span> {movie.overview}</div>
+                    <div><span>Box Office:</span> ${movie.revenue}</div>
+                    
                     <button id="delete" onClick={handleClick}>
                         DELETE
                     </button>

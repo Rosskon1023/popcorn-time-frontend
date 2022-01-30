@@ -8,7 +8,7 @@
   background-repeat: no-repeat;
   min-height: 100vh;
   display:grid;
-  grid-template-rows: 0.75fr 8fr 0.75fr;
+  grid-template-rows: 50px 1fr 40px;
 }
 
 .navigation {
@@ -64,6 +64,7 @@
   justify-content: center;
   display: grid;
   grid-template-columns: 1.5fr 1fr;
+  background: linear-gradient(110deg, #fefbe9 60%, #e1eedd 60%);
 }
 
 .welcome-image {
@@ -83,22 +84,34 @@
 }
 
 .welcome-text {
-  height: 50%;
+  height: 95%;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
-  align-items: center;
-  text-align: center;
+  justify-content: center;
+  align-items: stretch;
+  margin-right: 20px;
 }
 
 .welcome-text h2 {
   color:#183a1d;
   font-size: 2rem;
+  margin-bottom: 30px;
 }
 
-.welcome-text p, h4 {
+.welcome-text h4, li {
+  font-style: italic;
+}
+
+.welcome-text ul {
+  list-style: none;
+}
+
+.welcome-text li, h4 {
   color: #f0a04b;
   font-weight: bold;
+  margin-bottom: 10px;
+  margin-top: 10px;
+  float: left;
 }
 
 .welcome-text button {
@@ -120,7 +133,8 @@
   grid-row: 1/3;
   display: grid;
   grid-template-rows: 0.5fr 1.75fr;
-  grid-template-columns: 0.8fr 1fr;
+  grid-template-columns: 0.5fr 1fr;
+  background: linear-gradient(110deg, #fefbe9 60%, #e1eedd 60%);
 }
 
 .trailers-now-playing {
@@ -131,24 +145,79 @@
   justify-content: center;
 }
 
+.trailers-now-playing form {
+  width: 80%;
+  height: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.trailers-now-playing input {
+  width: 80%;
+  height: 50%;
+  display:inline-block;
+  border:0.2em solid black;
+  margin:0.1em;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  font-size: 1.5rem;
+  color:black;
+  text-align:center;
+  white-space: normal;
+  word-wrap: normal;
+  transition: all 0.2s;
+}
+
+.trailers-now-playing input:hover {
+  color:white;
+  background-color:black;
+}
+
 .trailers-search {
   grid-row: 1/2;
   grid-column: 2/3;
+  font-size: 10px;
   display: flex;
-  font-size: 12px;
-  justify-content: space-evenly;
-  align-items: stretch;
+  align-items: center;
+  justify-content: center;
+}
+
+.trailers-search form {
+  height: 100%;
 }
 
 .trailers-search-form {
   width: 90%;
-  margin-top: 5px;
   display: grid;
-  grid-template-columns: 1fr;
-  grid-template-rows: 1fr 1fr 1fr 1fr;
-  /* border: 3px solid #183a1d;
-  border-radius: 10%; */
-  padding: 20px;
+  grid-template-columns: 2.5fr 1fr;
+  grid-template-rows: 1fr;
+  border-left: 2px solid black;
+  justify-items: center;
+}
+
+.trailers-search-form-left {
+  margin: 10px;
+  margin-left: 30px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 0.75rem;
+}
+
+.trailers-search-form-left label {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.trailers-search-form-right {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
 .trailer-loading {
@@ -163,9 +232,12 @@
   grid-row: 2/3;
   grid-column: 1/3;
   display: grid;
-  grid-template-columns: 1fr 4fr 1fr;
+  grid-template-columns: 1fr 600px 1fr;
   place-items: center;
-  background: linear-gradient(to right,rgb(197, 103, 103),#fefbe9,#fefbe9,#fefbe9,#fefbe9,rgb(103, 179, 103));
+}
+
+.video-responsive {
+  margin-bottom: 5px;
 }
 
 .trash-it {
@@ -184,15 +256,63 @@
   justify-content: center;
 }
 
+.save-it input {
+  width: 50%;
+  height: 20%;
+  display:inline-block;
+  border:0.1em solid #183a1d;
+  margin:0.1em;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  font-size: 1.5rem;
+  color:#183a1d;
+  text-align:center;
+  white-space: normal;
+  word-wrap: normal;
+  transition: all 0.2s;
+}
+
+.save-it input:hover {
+  color:#ffffff;
+  background-color:#183a1d;
+}
+
+.trash-it input {
+  width: 50%;
+  height: 20%;
+  display:inline-block;
+  border:0.1em solid #a83636;
+  margin:0.1em;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  font-size: 1.5rem;
+  color:#a83636;
+  text-align:center;
+  white-space: normal;
+  word-wrap: normal;
+  transition: all 0.2s;
+}
+
+.trash-it input:hover {
+  color:#ffffff;
+  background-color:#a83636;
+}
+
 
 
 .index-container {
   grid-column: 1/3;
   grid-row: 1/3;
-  margin-top: 20px;
   display: flex;
   flex-wrap: wrap;
   justify-content: space-evenly;
+  background: linear-gradient(110deg, #fefbe9 60%, #e1eedd 60%);
 }
 
 .index-movie {
@@ -218,6 +338,8 @@
   height: 220px;
   width: 150px;
   border: 1px solid black;
+  border: 1px solid rgba(0, 0, 0, 0.5);
+  box-shadow: rgba(0, 0, 0, 0.3) 0px 10px 20px, rgba(0, 0, 0, 0.35) 0px 6px 6px;
 }
 
 .show-container {
@@ -238,6 +360,7 @@
 
 .video-responsive-show-iframe {
   border: 20px solid white;
+  box-shadow: rgba(255, 255, 255, 0.3) 0px 10px 20px, rgba(255, 255, 255, 0.35) 0px 6px 6px;
 }
 
 .sub-show-container-2 {
@@ -249,10 +372,57 @@
 
 .show-card {
   width: 80%;
-  height: 90%;
-  background-color: white;
-  border: 4px solid black;
-  border-radius: 10%;
+  height: 60%;
+  border: 1px solid white;
+  background-color: rgba(255,255,255,0.9);
+  border-radius: 5px;
+  box-shadow: rgba(214, 156, 48, 0.685) 0px 10px 30px;
+  display:flex;
+  flex-direction: column;
+  justify-content: space-around;
+  font-size: 16px;
+  font-family: 'Courier Prime', monospace;
+}
+
+.show-card-title {
+  text-align: center;
+    text-transform: uppercase;
+    overflow: hidden;
+}
+
+.show-card div {
+  margin-left: 5px;
+}
+
+.show-card span {
+  font-weight: bold;
+  font-style: italic;
+}
+
+.show-card button {
+  align-self: center;
+  display:flex;
+  width: 80%;
+  height: 20%;
+  display:inline-block;
+  border:0.1em solid #000000;
+  margin:0.1em;
+  border-radius:0.12em;
+  box-sizing: border-box;
+  text-decoration:none;
+  font-family:'Roboto',sans-serif;
+  font-weight:300;
+  font-size: 1.5rem;
+  color:#000000;
+  text-align:center;
+  white-space: normal;
+  word-wrap: normal;
+  transition: all 0.2s;
+}
+
+.show-card button:hover {
+  color:#ffffff;
+  background-color:#000000;
 }
 
 
