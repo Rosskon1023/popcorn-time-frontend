@@ -13,11 +13,40 @@
 
 .navigation {
   display: flex;
-  background-color: black;
-  color: Blue;
   justify-content: space-between;
   align-items: center;
   background-color: #fefbe9;
+}
+
+.navigation h1 {
+  margin-left: 20px;
+  color: #f6c453;
+}
+
+.navigation ul{
+  display: flex;
+  list-style: none;
+  align-items: center;
+}
+
+.navigation li {
+  margin-right: 3.5rem;
+  list-style: none;
+  align-items: center;
+  text-decoration: none;
+  color: #183a1d;
+}
+
+.navigation li:hover {
+  font-weight: 800;
+  cursor: pointer;
+}
+
+.navigation button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
 }
 
 .main {
@@ -33,6 +62,57 @@
   display: flex;
   align-items: center;
   justify-content: center;
+  display: grid;
+  grid-template-columns: 1.5fr 1fr;
+}
+
+.welcome-image {
+  grid-column: 1/2;
+  height: 95%;
+  width: 95%;
+  background-image: url("https://i.imgur.com/Vvl28kX.jpg");
+  background-repeat: no-repeat;
+  background-size: cover;
+  border-top-right-radius: 50px;
+  border-bottom-right-radius: 50px;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  margin-top: 10px;
+  margin-left: 10px;
+  margin-bottom: 10px;
+}
+
+.welcome-text {
+  height: 50%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  text-align: center;
+}
+
+.welcome-text h2 {
+  color:#183a1d;
+  font-size: 2rem;
+}
+
+.welcome-text p, h4 {
+  color: #f0a04b;
+  font-weight: bold;
+}
+
+.welcome-text button {
+  background: none;
+  border: none;
+  padding: 0;
+  font: inherit;
+  color:#f0a04b;
+  text-decoration: underline;
+}
+
+.welcome-text button:hover {
+  cursor: pointer;
+  font-weight: bolder;
 }
 
 .trailers-container {
@@ -190,6 +270,7 @@
   justify-content: center;
   align-items: center;
   background-color: #e1eedd;
+  color:#183a1d;
 }
 
 

@@ -9,7 +9,7 @@ function Main(props) {
         <div className="main" >
             <Switch>
                 <Route exact path="/">
-                    <Welcome />
+                    <Welcome user={props.user} />
                 </Route>
                 <Route path="/discover" render={() => (
                     props.user ?
