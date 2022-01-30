@@ -220,7 +220,10 @@ function Trailers(props) {
     const loading = () => {
         return (
             <div className="trailer-loading">
-                <h1>Select Now Playing to view Trailers</h1>
+                <div className="trailer-loading-text">
+                    <h1>Select Now Playing to view trailers currently in theaters</h1><br />
+                    <h1>Or enter a custom search</h1>
+                </div>
             </div>
         )
     }
