@@ -130,13 +130,17 @@
   border: none;
   padding: 0;
   font: inherit;
-  color:#f0a04b;
+  color:#bdaa96;
   text-decoration: underline;
 }
 
 .welcome-text button:hover {
   cursor: pointer;
   font-weight: bolder;
+}
+
+.welcome-text li {
+  color: white;
 }
 
 .trailers-container {
