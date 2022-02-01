@@ -29,3 +29,15 @@ Popcorn Time is a MERN-stack application that allows the user to:
 [Click here](https://its-popcorn-time.netlify.app/) to get started! Log in to your Popcorn Time account with Google. 
 
 ## Screenshots 
+
+### Landing Page
+![screenshot1](https://i.imgur.com/IdQzPSH.png)
+
+### Discover Page
+![screenshot2](https://i.imgur.com/xBXWjWx.png)
+
+### My Trailers Page
+![screenshot3](https://i.imgur.com/IN4CUpL.png)
+
+### Trailer - Show Page 
+![screenshot4](https://i.imgur.com/0hzAgQm.png)
