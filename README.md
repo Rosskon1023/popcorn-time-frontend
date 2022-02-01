@@ -1,6 +1,6 @@
 # Popcorn Time 
 
-Popcorn Time is a MERN-stack application that allows the user to: 
+- Popcorn Time is a MERN-stack application that allows the user to: 
     - Login to their very own Popcorn Time profile (with Google Credentials - Google Firebase)
     - Discover and view movie trailers 
         - Now Playing serves trailers for movies currently in theaters
