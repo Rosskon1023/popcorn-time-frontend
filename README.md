@@ -26,6 +26,6 @@ Popcorn Time is a MERN-stack application that allows the user to:
 - Heroku and Netlify for Deployment 
 
 ## Getting Started 
-[Click here] (https://its-popcorn-time.netlify.app/) to get started! Log in to your Popcorn Time account with Google. 
+[Click here](https://its-popcorn-time.netlify.app/) to get started! Log in to your Popcorn Time account with Google. 
 
 ## Screenshots 
