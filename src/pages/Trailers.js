@@ -196,6 +196,8 @@ function Trailers(props) {
                 <div className="video-responsive" currentMovie={currentMovie} >
                     <h2 style={{
                         textAlign: "center",
+                        color: "white",
+                        fontFamily: "Eczar",
                         }}>
                     {currentMovie[0].movieIdData.title}
                     </h2>
@@ -307,7 +309,7 @@ function Trailers(props) {
                         </div>
                     </div>
                     <div className="trailers-search-form-right">
-                        <div className="trailers-now-playing">
+                        <div className="trailers-search-playing">
                             <input type="submit" value="Search Trailers" />
                         </div>
                     </div>

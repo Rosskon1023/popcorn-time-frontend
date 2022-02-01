@@ -5,10 +5,10 @@ function Welcome(props) {
     const loaded = () => {
         return (
             <div className="welcome-text">
-                <h2>Welcome to Popcorn Time, {props.user.displayName.substr(0,props.user.displayName.indexOf(' '))}!</h2>
-                <p>Use "Discover" to explore and save movie trailers</p>
-                <p>Have an idea of what you want to watch? Customize your trailer search by date of release, actor, genre and rating!</p>
-                <p>Used Popcorn Time before? View all of your saved trailers in My Trailers</p>
+                <h2>welcome to popcorn time, {props.user.displayName.substr(0,props.user.displayName.indexOf(' '))}!</h2>
+                <p>use "discover" to explore and save movie trailers</p>
+                <p>have an idea of what you want to watch? customize your trailer search by date of release, actor, genre and rating!</p>
+                <p>used popcorn time before? view all of your saved trailers in my trailers</p>
             </div>
         )
     }
@@ -16,12 +16,12 @@ function Welcome(props) {
     const loading = () => {
         return (
             <div className="welcome-text">
-                <h2>Welcome to Popcorn Time!</h2>
+                <h2>welcome to popcorn time!</h2>
                 <ul>
-                    <li>You must <button onClick={login}>Log In</button> to get started</li>
-                    <li>Explore and save movie trailers </li>
-                    <li>Have an idea of what you want to watch? Customize your trailer search by date of release, actor, genre and rating!</li>
-                    <li>Used Popcorn Time before? View all of your saved trailers in My Trailers</li>
+                    <li>you must <button onClick={login}>log In</button> to get started</li>
+                    <li>explore and save movie trailers </li>
+                    <li>have an idea of what you want to watch? customize your trailer search by date of release, actor, genre and rating!</li>
+                    <li>used popcorn time before? view all of your saved trailers in my trailers</li>
                 </ul>
             </div> 
         )
